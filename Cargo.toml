@@ -32,7 +32,7 @@ tokio = { git = "https://github.com/hft-team/tokio-dpdk.git", branch = "tokio-1.
 futures-channel = { version = "0.3", optional = true }
 futures-util = { version = "0.3", default-features = false, optional = true }
 #h2 = { version = "0.4.2", optional = true }
-h2 = { git = "https://github.com/hft-team/h2-dpdk.git", branch = "v0.4.5",   optional = true}
+h2 = { git = "https://github.com/hft-team/h2-dpdk.git", branch = "v0.4.5", optional = true }
 
 http-body-util = { version = "0.1", optional = true }
 httparse = { version = "1.8", optional = true }
@@ -66,7 +66,8 @@ serde_json = "1.0"
 #    "test-util",
 #] }
 # https://github.com/hft-team/tokio-dpdk.git
-tokio = { git = "https://github.com/hft-team/tokio-dpdk.git", branch = "tokio-1.37.0", features = ["fs","rt", "net", "sync", "time", "io-util", "io-std"] }
+tokio = { git = "https://github.com/hft-team/tokio-dpdk.git", branch = "tokio-1.37.0", features = ["fs", "rt", "net", "sync", "time", "io-util", "io-std"] }
+fstack-mio = { git = "https://github.com/hft-team/fstack-mio.git", branch = "master" }
 
 tokio-test = "0.4"
 tokio-util = { git = "https://github.com/hft-team/tokio-dpdk.git", branch = "tokio-1.37.0" }
@@ -126,6 +127,11 @@ incremental = false
 [[example]]
 name = "client"
 path = "examples/client.rs"
+required-features = ["full"]
+
+[[example]]
+name = "client_bind_addr"
+path = "examples/client_bind_addr.rs"
 required-features = ["full"]
 
 [[example]]
